@@ -34,6 +34,11 @@ El repositorio incluye la primera base jugable:
 - Teclas 1, 2, 3 o 4: reiniciar con esa cantidad de jugadores.
 - R: reiniciar la partida.
 
-## Siguiente paso de VR
+## VR - primer paso del tutorial
 
-En Edit > Project Settings > XR Plug-in Management, activar OpenXR para Windows. Luego se agrega el XR Origin, los controles y el agarre del palo cuando se confirme el modelo de visor que se va a usar.
+1. Crear primero el mapa con MiniGolf VR > Crear prototipo jugable.
+2. En Edit > Project Settings > XR Plug-in Management, activar OpenXR para Windows.
+3. Ir a MiniGolf VR > Agregar jugador VR (tutorial).
+4. Conectar las gafas al PC y presionar Play.
+
+Esta opcion agrega un XR Origin, la camara que sigue las gafas, los controles izquierdo y derecho y el XR Interaction Manager. El agarre del palo se agrega en el siguiente paso.
