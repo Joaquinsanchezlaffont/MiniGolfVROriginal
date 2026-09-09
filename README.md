@@ -32,6 +32,7 @@ El repositorio incluye la primera base jugable:
 - Mantener Espacio: cargar fuerza.
 - Soltar Espacio: golpear.
 - Teclas 1, 2, 3 o 4: reiniciar con esa cantidad de jugadores.
+- Enter: confirmar que el siguiente jugador ya tiene las gafas.
 - R: reiniciar la partida.
 
 ## VR - primer paso del tutorial
@@ -42,3 +43,7 @@ El repositorio incluye la primera base jugable:
 4. Conectar las gafas al PC y presionar Play.
 
 Esta opcion agrega un XR Origin, la camara que sigue las gafas, los controles izquierdo y derecho y el XR Interaction Manager. El agarre del palo se agrega en el siguiente paso.
+
+## Multiplayer local
+
+El juego permite entre 1 y 4 jugadores con una sola gafa. Elegi la cantidad con las teclas 1 a 4. Cuando cambia el turno, pasale las gafas al siguiente jugador y confirma con Enter o con el boton A del control derecho. Cada jugador conserva su pelota, sus golpes del hoyo y su puntaje total. Al final se muestra el ganador o el empate.

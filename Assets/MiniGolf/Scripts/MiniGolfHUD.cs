@@ -26,17 +26,14 @@ public sealed class MiniGolfHUD : MonoBehaviour
             holeText.text = "Hoyo " + manager.CurrentHoleNumber + " / " + Mathf.Max(1, manager.HoleCount);
 
         if (scoreText != null)
-        {
-            scoreText.text = player != null
-                ? "Golpes del hoyo: " + player.holeStrokes + "   Total: " + player.totalStrokes
-                : "Golpes: 0";
-        }
+            scoreText.text = manager.BuildHudScoreboard();
 
         if (instructionsText != null)
         {
-            instructionsText.text =
-                "A/D o flechas: apuntar   |   Mantener ESPACIO: fuerza   |   Soltar: golpear\n" +
-                "Teclas 1-4: cantidad de jugadores   |   R: reiniciar";
+            instructionsText.text = manager.WaitingForTurnConfirmation
+                ? "Pasale las gafas al jugador indicado   |   ENTER o boton A: jugador listo"
+                : "A/D o flechas: apuntar   |   Mantener ESPACIO: fuerza   |   Soltar: golpear\n" +
+                  "Teclas 1-4: cantidad de jugadores   |   R: reiniciar";
         }
     }
 

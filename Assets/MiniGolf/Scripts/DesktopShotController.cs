@@ -31,6 +31,9 @@ public sealed class DesktopShotController : MonoBehaviour
             return;
         }
 
+        if (keyboard.enterKey.wasPressedThisFrame && gameManager.ConfirmTurnReady())
+            return;
+
         float aimInput = 0f;
         if (keyboard.leftArrowKey.isPressed || keyboard.aKey.isPressed) aimInput -= 1f;
         if (keyboard.rightArrowKey.isPressed || keyboard.dKey.isPressed) aimInput += 1f;

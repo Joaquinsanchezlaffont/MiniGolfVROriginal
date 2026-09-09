@@ -18,9 +18,19 @@ public static class MiniGolfVrRigBuilder
         XROrigin existingOrigin = Object.FindFirstObjectByType<XROrigin>();
         if (existingOrigin != null)
         {
+            if (existingOrigin.GetComponent<VrTurnReadyInput>() == null)
+            {
+                Undo.AddComponent<VrTurnReadyInput>(existingOrigin.gameObject);
+                EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+                EditorSceneManager.SaveOpenScenes();
+            }
+
             Selection.activeGameObject = existingOrigin.gameObject;
             EditorGUIUtility.PingObject(existingOrigin.gameObject);
-            EditorUtility.DisplayDialog("Jugador VR", "La escena ya tiene un XR Origin.", "Listo");
+            EditorUtility.DisplayDialog(
+                "Jugador VR actualizado",
+                "El XR Origin ya existia y quedo preparado para confirmar los turnos con el boton A.",
+                "Listo");
             return;
         }
 
@@ -33,6 +43,7 @@ public static class MiniGolfVrRigBuilder
         GameObject originObject = new GameObject("XR Origin (VR)");
         originObject.transform.position = new Vector3(0f, 0f, -3.3f);
         XROrigin origin = originObject.AddComponent<XROrigin>();
+        originObject.AddComponent<VrTurnReadyInput>();
         Undo.RegisterCreatedObjectUndo(originObject, "Crear jugador VR");
 
         GameObject cameraOffset = new GameObject("Camera Offset");
@@ -54,7 +65,7 @@ public static class MiniGolfVrRigBuilder
 
         EditorUtility.DisplayDialog(
             "Jugador VR agregado",
-            "Se creo el XR Origin con la camara y los controles izquierdo y derecho. Activa OpenXR para Windows antes de probar con las gafas.",
+            "Se creo el XR Origin con la camara y los controles. En multiplayer, el boton A confirma que el siguiente jugador esta listo.",
             "Listo");
     }
 
