@@ -20,7 +20,9 @@ public sealed class MiniGolfHUD : MonoBehaviour
         MiniGolfPlayerState player = manager.ActivePlayer;
 
         if (playerText != null)
-            playerText.text = player != null ? "Turno: " + player.playerName : "Turno: -";
+            playerText.text = player != null
+                ? "Turno: " + player.playerName + "   Jugadores: " + manager.Players.Count
+                : "Turno: -";
 
         if (holeText != null)
             holeText.text = "Hoyo " + manager.CurrentHoleNumber + " / " + Mathf.Max(1, manager.HoleCount);
