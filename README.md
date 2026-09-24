@@ -2,48 +2,31 @@
 
 Proyecto de Sebastian Angel Warman y Joaquin Sanchez Laffont para 4to TIC.
 
-## Estado actual
+## Abrir el juego
 
-El repositorio incluye la primera base jugable:
+1. Abrir este proyecto desde Unity Hub seleccionando la carpeta que contiene `Assets`, `Packages` y `ProjectSettings`.
+2. Usar Unity 6.3.21f1.
+3. Abrir `Assets/Scenes/MinigolfVR.unity`.
+4. Presionar Play.
 
-- mapa de prueba generado desde Unity;
-- pelota con fisicas;
-- medidor de fuerza;
-- control de escritorio para poder probar sin las gafas;
-- entre 1 y 4 jugadores;
-- turnos y contador de golpes;
-- timer de 60 segundos para el ultimo jugador;
-- penalizacion de 5 golpes si termina el tiempo;
-- deteccion del hoyo y pantalla de resultados;
-- base del palo para conectar despues a los controles VR;
-- paquetes OpenXR y XR Interaction Toolkit.
+La escena ya esta armada dentro de Unity. No hay que ejecutar un creador externo.
 
-## Crear el prototipo
+## Carpetas
 
-1. Abrir el proyecto con Unity 6.3.21f1.
-2. Esperar que Unity termine de instalar los paquetes.
-3. Ir al menu superior MiniGolf VR > Crear prototipo jugable.
-4. Aceptar la creacion del mapa.
-5. Abrir Assets/Scenes/MinigolfVR.unity y presionar Play.
+- `Assets/Scenes`: escena jugable.
+- `Assets/Scripts`: mecanicas de pelota, golpes, turnos, puntaje, timer y HUD.
+- `Assets/Materials`: materiales del campo.
+- `Assets/VR`: base del jugador VR, controles y configuracion XR.
+- `Packages`: paquetes de Unity, OpenXR y XR Interaction Toolkit.
+- `ProjectSettings`: configuracion obligatoria de Unity.
 
-## Controles de prueba
+## Controles de prueba en PC
 
 - A/D o flechas: apuntar.
 - Mantener Espacio: cargar fuerza.
 - Soltar Espacio: golpear.
-- Teclas 1, 2, 3 o 4: reiniciar con esa cantidad de jugadores.
-- Enter: confirmar que el siguiente jugador ya tiene las gafas.
-- R: reiniciar la partida.
+- Teclas 1 a 4: cantidad de jugadores.
+- Enter: confirmar el siguiente turno.
+- R: reiniciar.
 
-## VR - primer paso del tutorial
-
-1. Crear primero el mapa con MiniGolf VR > Crear prototipo jugable.
-2. En Edit > Project Settings > XR Plug-in Management, activar OpenXR para Windows.
-3. Ir a MiniGolf VR > Agregar jugador VR (tutorial).
-4. Conectar las gafas al PC y presionar Play.
-
-Esta opcion agrega un XR Origin, la camara que sigue las gafas, los controles izquierdo y derecho y el XR Interaction Manager. El agarre del palo se agrega en el siguiente paso.
-
-## Multiplayer local
-
-El juego permite entre 1 y 4 jugadores con una sola gafa. Elegi la cantidad con las teclas 1 a 4. Cuando cambia el turno, pasale las gafas al siguiente jugador y confirma con Enter o con el boton A del control derecho. Cada jugador conserva su pelota, sus golpes del hoyo y su puntaje total. Al final se muestra el ganador o el empate.
+El medidor de fuerza aparece arriba a la izquierda durante Play.
